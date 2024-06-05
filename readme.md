@@ -1,23 +1,22 @@
 # http-log-server
 
-http-log-server 是一个基于 [CloudWeGo Hertz](https://github.com/cloudwego/hertz) 框架构建的 HTTP 日志服务器。它接收 HTTP
-POST 请求，并将日志记录到文件和标准输出中。
+http-log-server is an HTTP log server built on the [CloudWeGo Hertz](https://github.com/cloudwego/hertz) framework. It receives HTTP POST requests and logs the data to a file and standard output.
 
-## 功能
+## Features
 
-- 接收 HTTP POST 请求，解析请求中的日志数据。
-- 验证请求的授权信息。
-- 将日志记录到文件和标准输出中。
+- Receives HTTP POST requests and parses the log data from the requests.
+- Validates the authorization information of the requests.
+- Logs the data to a file and standard output.
 
-## 使用方法
+## Usage
 
-### 环境变量
+### Environment Variables
 
-- `TOKEN`: 用于验证请求的授权信息。
+- `TOKEN`: Used to validate the authorization information of the requests.
 
-### 运行服务器
+### Running the Server
 
-你可以通过以下命令构建和运行 Docker 镜像：
+You can build and run the Docker image using the following commands:
 
 ```shell
 docker build -t litongava/http-log-server:1.0.0 .
@@ -25,9 +24,9 @@ docker push litongava/http-log-server:1.0.0
 docker run -e TOKEN=your_token -p 8888:8888 litongava/http-log-server:1.0.0
 ```
 
-### 发送日志请求
+### Sending Log Requests
 
-使用以下格式的 HTTP POST 请求发送日志：
+Send log data using an HTTP POST request in the following format:
 
 ```http
 POST /log HTTP/1.1
@@ -41,7 +40,7 @@ Content-Type: application/json
 }
 ```
 
-## 构建Docker
+## Building Docker
 
 ```shell
 docker build -t litongava/http-log-server:1.0.0 .
@@ -51,10 +50,10 @@ docker build -t litongava/http-log-server:1.0.0 .
 docker push litongava/http-log-server:1.0.0
 ```
 
-## 贡献
+## Contribution
 
-欢迎提交 Issue 和 Pull Request 来改进该项目。
+Feel free to submit Issues and Pull Requests to improve this project.
 
-## 许可证
+## License
 
-本项目使用 [MIT 许可证](LICENSE)。
+This project is licensed under the [MIT License](LICENSE).
